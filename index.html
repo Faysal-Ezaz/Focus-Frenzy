@@ -1,33 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FocusFrenzy</title>
+    <title> Focus Frenzy</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,500;1,600&family=Poppins:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="homepage">
-        <div class="left">
-            <div class="title">&#x2022; focus  frenzy &#x2022;</div>
-            <div class="headline">
-                We help you focus.<br>We help you achieve more.
-            </div>
-            <div class="introduction">The ultimate tool for boosting productivity. Take control of your day with our comprehensive focus music and pomodoro timer chrome extension and website!</div>
-            <a style="text-decoration:none" href="focus.html">
-                <div><button class="focus-button">FOCUS</button></div>
-            </a>
-        </div>
-        <a href="menu.html">
-            <div class="menu">
-                <div class="menu-icon">
-                    <div></div>
-                    <div></div>
-                    <div></div>
+    <section>
+        <img src="bg.jpg" id="bg">
+        <img src="moon.png" id="moon">
+        <img src="mountain.png" id="mountain">
+        <img src="road.png" id="road">
+        <h2 id="text"> Focus  Frenzy</h2>
+        <p id="subtext">We &nbsp; help &nbsp; you &nbsp; achieve &nbsp; more.</p>
+        <button id="button" onclick="smoothScroll(document.getElementById('pomodoro'))">Focus
+        <script>
+            window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do {
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { 
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+        </script></button>
+
+
+    </section>
+    <script type="text/javascript">
+        let bg= document.getElementById('bg');
+        let moon= document.getElementById('moon');
+        let mountain= document.getElementById('mountain');
+        let road= document.getElementById('road');
+        let text= document.getElementById('text');
+        let subtext=document.getElementById('subtext');
+
+        window.addEventListener('scroll', function(){
+            var value= window.scrollY;
+            bg.style.top=value*0.5 + 'px';
+            moon.style.left=-value*0.5 + 'px';
+            mountain.style.top=-value*0.15 + 'px';
+            road.style.top=value*0.15 + 'px';
+            text.style.top=value*1 + 'px';
+            
+        })
+    </script>
+    <section id="pomodoro">
+        <div id="pomodoro-app">
+            <div id="container">
+                <div id="timer">
+                    <div id="time">
+                        <span id="minutes">25</span>
+                        <span id="colon">:</span>
+                        <span id="seconds">00</span>
+                    </div>
+                    <div id="filler"></div>
                 </div>
-        </a>
-    </div>
+            
+                <div id="buttons">
+                    <button id="work">Work</button>
+                    <button id="shortBreak">Short Break</button>
+                    <button id="longBreak">Long Break</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+            </div>
+        <script src="index.js">
+            
+        </script>
+
+    </section>
+
 </body>
-</html>
