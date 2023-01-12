@@ -11,7 +11,32 @@
         <img src="mountain.png" id="mountain">
         <img src="road.png" id="road">
         <h2 id="text"> Focus  Frenzy</h2>
-        <p id="subtext">We help you achieve more.</p>
+        <p id="subtext">We &nbsp; help &nbsp; you &nbsp; achieve &nbsp; more.</p>
+        <button id="button" onclick="smoothScroll(document.getElementById('pomodoro'))">Focus
+        <script>
+            window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do {
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
+
+    var targetY = 0;
+    do { 
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 20);
+    }
+    
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+        </script></button>
 
 
     </section>
@@ -34,8 +59,26 @@
         })
     </script>
     <section id="pomodoro">
-        
-        <script>
+        <div id="pomodoro-app">
+            <div id="container">
+                <div id="timer">
+                    <div id="time">
+                        <span id="minutes">25</span>
+                        <span id="colon">:</span>
+                        <span id="seconds">00</span>
+                    </div>
+                    <div id="filler"></div>
+                </div>
+            
+                <div id="buttons">
+                    <button id="work">Work</button>
+                    <button id="shortBreak">Short Break</button>
+                    <button id="longBreak">Long Break</button>
+                    <button id="stop">Stop</button>
+                </div>
+            </div>
+            </div>
+        <script src="index.js">
             
         </script>
 
