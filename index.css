@@ -167,3 +167,101 @@ appearance: none;
     background :rgb(1, 171, 209);
   }
   
+section focus-page{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;  
+}
+#left{
+  display: flex;
+  flex-direction: column;
+}
+#title{
+  order: 1;
+} 
+#pomodoro{
+  order: 2;
+}
+#right{
+  display: flex;
+}
+.menu{
+  order: 1;
+}
+.focus-music{
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  margin-right: 50px;
+  height: 490px;
+  width: 820px;
+  background-color: #0A2A43;
+  padding: 40px;
+  border-radius: 20px;
+  justify-content: space-between;
+  align-content: flex-start;
+  gap: 70px;
+}
+.focus-music div{
+  cursor: pointer;
+  transition: 0.15s;
+  height: 85px;
+}
+.focus-music div:hover{
+  background-color: rgb(182, 189, 204);
+  
+}
+.cloud-thunder{
+  margin-top: 6px;
+}
+.leaves{
+  margin-right: 0px;
+}
+div .white-noise{
+  position: relative;
+  height: 85px;
+  width: 64px;
+}
+div .brown-noise{
+  position: relative;
+  height: 85px;
+  width: 64px;
+}
+div .pink-noise{
+  position: relative;
+  height: 85px;
+  width: 64px;
+}
+
+#pomodoro{
+  display: flex;
+  flex-direction: column;
+}
+#title{
+  font-size: 50px;
+  color: white;
+  margin-top: 0;
+  padding-top: 0;
+  text-align: start;
+}
+.menu{
+  order: 2;
+  width: 38px;
+  height: 38px;
+  align-items: stretch;
+  margin: 10px;
+  cursor: pointer;
+  transition: width 10s;
+}
+.menu-icon div{
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  align-self: center;
+}

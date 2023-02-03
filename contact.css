@@ -1,4 +1,5 @@
 body{
+    background-color: #0A2A43;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -8,7 +9,6 @@ body{
     font-family: 'Poppins', sans-serif;
     color: white;
     font-weight: 700;
-    background-image: url(images/p1-bg.png);
     background-size: 95%;
     height: 100vh;
 }
@@ -19,7 +19,7 @@ body{
 .title{
     order: 1;
     position: relative;
-    color: rgb(247, 54, 54);
+    color: white;
     font-size: 45px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -50,11 +50,12 @@ body{
     flex-direction: column;
 }
 .user-info input{
+    border-radius: 20px;
     margin-bottom: 20px;
     font-size: 15px;
-    background-color: rgb(155, 154, 154);
+    background-color: rgb(211, 210, 210);
     margin-right: 60px;
-    line-height: 25px;
+    line-height: 20px;
     border: none;
     width: 250px;
 
@@ -64,9 +65,10 @@ body{
 }
 .user-message input{
     font-size: 15px;
-    background-color: rgb(155, 154, 154);
+    background-color: rgb(211, 210, 210);
+    border-radius: 20px;
     margin-right: 60px;
-    height: 77px;
+    height: 67px;
     width: 600px;
     color: white;
     margin-bottom: 20px;
@@ -76,9 +78,17 @@ body{
     font-size: 15px;
     width: 100px;
     height: 40px;
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
-    background-color: rgb(247, 54, 54);
+    background-color: white;
     cursor: pointer;
-    border-radius: 10%;
+    border-radius: 20px;
 }
+input[type=text] {
+    color: black;
+    padding: 12px 20px;
+  }
+  input[type=email]{
+    color: black;
+    padding: 12px 20px;
+  }
